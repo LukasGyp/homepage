@@ -2,4 +2,12 @@
 
 {% block body %} 
 this is blog top page.
+{% for blog in blog_list %}
+{{blog}}<br>
+{{blog.created}}<br>
+{% for tag in blog.tags.all %}
+{{tag}}<br>
+{% endfor %}
+{{blog.content}}
+{% endfor %}
 {% endblock %}

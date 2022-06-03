@@ -1,6 +1,6 @@
 from http.client import HTTPResponse
 from django.shortcuts import render
-from .models import Profile
+from .models import Profile, BlogPost
 
 # Create your views here.
 def top(request):
@@ -14,6 +14,6 @@ def profile(request):
 
 def blog(request):
   context = {
-    
+    'blog_list': BlogPost.objects.all(),
   }
   return render(request, 'blog.html', context)
