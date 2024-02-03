@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mysite:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - './web:/mysite'
+    ports:
+      - "8000:8000"
+    container_name: docker_django
+    tty: true
+    working_dir: '/mysite'
